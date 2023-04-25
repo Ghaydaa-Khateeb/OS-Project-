@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane focusTraversable="true" prefHeight="622.0" prefWidth="623.0" style="-fx-background-color: linear-gradient(to right,white,green,green);" styleClass="-fx-OVERFLOW-X: auto" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+   <children>
+      <Accordion layoutX="80.0" layoutY="27.0" prefHeight="35.0" prefWidth="228.0" />
+      <Label layoutX="142.0" layoutY="15.0" prefHeight="59.0" prefWidth="311.0" style="-fx-border-style: solid; -fx-border-color: white; -fx-border-radius: 50px; -fx-border-width: 3px;" text="     Cpu Scheduling Algorithms" textAlignment="RIGHT" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+         <font>
+            <Font name="Constantia Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="46.0" layoutY="139.0" mnemonicParsing="false" onAction="#generateDiagramSRTF" prefHeight="25.0" prefWidth="90.0" text="SRTF" />
+      <Button layoutX="409.0" layoutY="139.0" mnemonicParsing="false" onAction="#generateDiagramEP" prefHeight="25.0" prefWidth="207.0" text="ExplicitPriority(Preemption)" />
+      <Button layoutX="252.0" layoutY="139.0" mnemonicParsing="false" onAction="#generateDiagramMP" prefHeight="25.0" prefWidth="118.0" text="MultiProgrammed" />
+      <Button layoutX="154.0" layoutY="139.0" mnemonicParsing="false" onAction="#generateDiagramSJF" prefHeight="25.0" prefWidth="81.0" text="SJF" />
+      <Button layoutX="391.0" layoutY="86.0" mnemonicParsing="false" onAction="#generateRandom" prefHeight="35.0" prefWidth="217.0" text="GenerateRandom" />
+      <Label fx:id="myMessage" layoutX="46.0" layoutY="86.0" prefHeight="35.0" prefWidth="337.0" style="-fx-background-color: white; -fx-border-color: #000;" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Label>
+      <TableView fx:id="table" layoutX="42.0" layoutY="180.0" prefHeight="225.0" prefWidth="574.0">
+        <columns>
+          <TableColumn fx:id="PID" prefWidth="47.0" text="PID" />
+          <TableColumn fx:id="AT" prefWidth="57.0" text="AT" />
+            <TableColumn fx:id="BT" prefWidth="55.5" text="BT" />
+            <TableColumn fx:id="Priority" prefWidth="65.0" text="Priority" />
+            <TableColumn fx:id="FT" prefWidth="117.5" text="FT" />
+            <TableColumn fx:id="TA" prefWidth="63.0" text="TA" />
+            <TableColumn fx:id="wait" prefWidth="69.5" text="wait" />
+            <TableColumn fx:id="WTA" prefWidth="98.0" text="WTA" />
+        </columns>
+      </TableView>
+      <StackedBarChart layoutX="-3.0" layoutY="405.0" prefHeight="212.0" prefWidth="623.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </StackedBarChart>
+   </children>
+</AnchorPane>
